@@ -15,10 +15,10 @@ class KeyPair
 class Keys
 {
     public:
-        static std::map<int, KeyPair> KEYS;
+    static std::map<int, KeyPair> KEYS;
 };
 
-map<int, KeyPair> Keys::KEYS = {
+std::map<int, KeyPair> Keys::KEYS = {
     {0xC1, {"[VK_ABNT_C1]", "[Abnt C1]"}},
     {0xC2, {"[VK_ABNT_C2]", "[Abnt C2]"}},
     {0x6B, {"[VK_ADD]", "[Numpad +]"}},
@@ -214,3 +214,4 @@ map<int, KeyPair> Keys::KEYS = {
 
 
 #endif // KEYCONSTANTS_H
+
