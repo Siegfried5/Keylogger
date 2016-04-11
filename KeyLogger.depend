@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1460087718 source:c:\users\admin\documents\keylogger\main.cpp
+	<iostream>
+	<windows.h>
+	"Base64.h"
+
+1460087773 c:\users\admin\documents\keylogger\base64.h
+	<vector>
+	<string>
+
