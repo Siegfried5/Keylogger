@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 #include <sstream>
+#include <fstream>
 
 namespace Helper
 {
@@ -42,8 +43,8 @@ namespace Helper
 
     std::string GetDateString() const
     {
-    	return std::string( D < 10 ? "0" : "") + ToString(D) + 
-    		   std::string( m < 10 ? ".0" : ".") + ToString(m) + "." + 
+    	return std::string( D < 10 ? "0" : "") + ToString(D) +
+    		   std::string( m < 10 ? ".0" : ".") + ToString(m) + "." +
     		   ToString(y);
     }
 
@@ -54,7 +55,7 @@ namespace Helper
     	       std::string( S < 10 ? sep : "") + ToString(S);
     }
 
-    std::string GetDateString( const std::string &sep = ":") const
+    std::string GetDateTimeString( const std::string &sep = ":") const
     {
     	return GetDateString() + " " + GetTimeString(sep);
     }
@@ -72,7 +73,7 @@ namespace Helper
 	void WriteAppLog( const std::string &s)
 	{
 		std::ofstream file("AppLog.txt", std::ios::app);
-		file << "[" << Helper::DateTime.GetDateTimeString() << "]" << 
+		file << "[" << Helper::DateTime().GetDateTimeString() << "]" <<
 		"\n" << s << std::endl << "\n";
 		file.close();
 	}
