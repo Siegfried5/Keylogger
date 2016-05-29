@@ -13,9 +13,9 @@
 
 namespace Mail
 {
-    #define X_EM_TO "ENTER YOUR EMAIL"
-    #define X_EM_FROM "ENTER YOUR EMAIL"
-    #define X_EM_PASS "Enter PASSWORD"
+    #define X_EM_TO "ENTER YOUR EMAIL ADDRESS"
+    #define X_EM_FROM "ENTER YOUR EMAIL ADDRESS"
+    #define X_EM_PASS "ENTER YOUR PASSWORD"
 
 const std::string &PowerShellScript =
 "Param( \r\n   [String]$Att,\r\n   [String]$Subj,\r\n   "
@@ -108,7 +108,7 @@ const std::string &PowerShellScript =
             return -2;
 
 
-        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" - Subj \""
+        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" -Subj \""
                             + StringReplace(subject, "\"", "\\\"") +
                             "\" -Body \""
                             + StringReplace(body, "\"", "\\\"") +
