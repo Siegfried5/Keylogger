@@ -12,6 +12,12 @@ also you must enable your email to use less secure apps in order for you to reci
     * Compiler flags: -mwindows
     * linker flags: -mwindows
 
+## Debuging:
+After you add the comiler flags and get it to compiler and it does not send the email their are a few  
+thing to check and do to get it to work.
+* _**Make Sure the email account used can support unsecure apps**_  
+* _**Wifi; I have notice that sometimes the wifi will not allow email to send**_  
+* _**Sometimes the powershell script in sendmail.h "does not work" So replace it with the code in powershell.docx**_  
 
 
 ## Disclamer:
