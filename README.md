@@ -7,10 +7,12 @@ If you wish to use this keylogger You must edit the following lines of codes: 16
 also you must enable your email to use less secure apps in order for you to recive the emails
 
 ## Compiler Setting For CodeBlocks:
-  * added a new flag with the following Setting -> Compiler
+  * added a new flag with the following `Setting -> Compiler`
     * name: windowsAPI
     * Compiler flags: -mwindows
     * linker flags: -mwindows
+  * Have CodeBlocks use C++ 11 standards `Setting -> Compiler`
+    * `[ ]Have g++ follow the C++11 ISO C++  language standard [-std=c++11]` must be toggled on 
 
 ## Debuging:
 After you add the comiler flags and get it to compiler and it does not send the email their are a few  
